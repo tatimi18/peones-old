@@ -3,6 +3,25 @@
     height: 1080px
     width: 1920px
     background: url(../img/bg/main_bg.jpg) center (center/cover) no-repeat
+    &__title
+        padding-top: 125px
+        font-family: 'SophieScholl'
+        font-weight: 400
+        font-size: 85px
+        color: $pink_color
+        opacity: 0.88
+    &__subtitle
+        padding: 15px 0 70px 0
+        width: 465px
+        font-family: 'Montserrat'
+        font-weight: 400
+        font-size: 31px
+        line-height: 38px
+        color: $white_color
+    &__flower
+        position: absolute
+        left: 556px
+        top: 604px
 
 nav
     display: flex
@@ -20,17 +39,17 @@ nav
         font-size: 16px
         color: $white_color
         border: 2px solid rgba(0, 0, 0, 0)
+        transition: 0.5s all
         &:hover
             color: $pink_color
             border: 2px solid $pink_color
-            transition: 0.5s all
             text-decoration: none
         
 
 .main-search
     justify-content: space-between
     display: flex
-    width: 218px
+    width: 229px
     height: 27px
     &__textarea
         padding: 4px
