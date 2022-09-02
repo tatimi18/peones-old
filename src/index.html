@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peones</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+<!--     <link rel="stylesheet" href="css/bootstrap.min.css">-->    
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/fonts.min.css">
     <link rel="stylesheet" href="css/style.min.css">
@@ -45,16 +45,12 @@
 
     <section class="tabs">
         <div class="container">
-            <ul class="nav nav-tabs">
-                <li class="nav-item nav-item_active">
-                  <div class="nav-link active">Доставка</div>
-                </li>
-                <li class="nav-item">
-                  <div class="nav-link">Оплата</div>
-                </li>
+            <ul class="tabs__list">
+                <li class="tabs__item"><button class="tabs__btn tabs__btn_active" data-tabs-path="delivery">Доставка</button></li>
+                <li class="tabs__item"><button class="tabs__btn" data-tabs-path="payment">Оплата</button></li>
               </ul>
 
-              <div class="tabs__content tabs__content_active">
+              <div class="tabs__content tabs__content_active" data-tabs-target="delivery">
                 <div class="tabs-item">
                     <div class="tabs-item__wrapper">
                         <img src="icons/shopping-bag.png" alt="shopping bag" class="tabs-item__img">
@@ -112,13 +108,13 @@
                     </div>
                 </div>
                 </div>
-                <div class="tabs__content">
+                <div class="tabs__content" data-tabs-target="payment">
                     <div class="tabs-item">
                         <div class="tabs-item__wrapper">
                             <img src="icons/payment.png" alt="payment" class="tabs-item__img">
                             <div class="tabs-item__wrapper-descr">
                                 <div class="tabs-item__title">Перевод на банковскую карту</div>
-                                <div class="tabs-item__text">
+                                <div class="tabs-item__text tabs-item__text_second">
                                     <p>После подтверждения и оформления заказа Вам будет выставлен счет и выслан номер карты для осуществления перевода </p>
                                 </div>
                             </div>
@@ -129,7 +125,7 @@
                             <img src="icons/cash.png" alt="cash" class="tabs-item__img">
                             <div class="tabs-item__wrapper-descr">
                                 <div class="tabs-item__title">Оплата наличными курьеру </div>
-                                <div class="tabs-item__text">
+                                <div class="tabs-item__text tabs-item__text_second">
                                     <p>Заказанные товары оплачиваются наличными только при получении заказа в г. Сергиев Посад</p>
                                 </div>
                             </div>
@@ -140,7 +136,7 @@
                             <img src="icons/invoice.png" alt="invoice" class="tabs-item__img">
                             <div class="tabs-item__wrapper-descr">
                                 <div class="tabs-item__title">Оплата по счёту в электронном письме</div>
-                                <div class="tabs-item__text">
+                                <div class="tabs-item__text tabs-item__text_second">
                                     <p>После подтверждения и оформления заказа Вам будет выставлен счет с возможностью оплаты прямо из письма через систему Яндекс.Деньги</p>
                                 </div>
                             </div>
@@ -151,7 +147,7 @@
                             <img src="icons/credit-card.png" alt="credit-card" class="tabs-item__img">
                             <div class="tabs-item__wrapper-descr">
                                 <div class="tabs-item__title">Оплата в пунктах выдачи CDEK</div>
-                                <div class="tabs-item__text">
+                                <div class="tabs-item__text tabs-item__text_second">
                                     <p>В пунктах выдачи Москвы и Московской области можно оплатить заказ</p>
                                     <p>При получении наличными либо картой, при доставке в другие регионы требуется предварительная оплата заказа, оплата при получении невозможна</p>
                                 </div>
@@ -162,6 +158,6 @@
               </div>
         </div>
     </section>
-
+    <script src="js/script.js"></script>
 </body>
 </html>
