@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
       tabsContent.forEach(el => {el.classList.remove('tabs__content_active')});
       document.querySelector(`[data-tabs-target="${path}"]`).classList.add('tabs__content_active');
     };
+
   });
 
+  
 
