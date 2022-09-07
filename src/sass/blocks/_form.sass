@@ -35,6 +35,8 @@
         height: 42px
         &:hover
             height: 39px
+    &__info
+        display: block
 
 .form-column
     width: 260px
@@ -79,6 +81,18 @@
         border: none
         &::placeholder
             color: $grey_color
+        &:active
+            border: 1px solid $pink_color
+
+            
+.error
+    border: 1px solid red
+label.error
+    border: none
+    color: red
+    font-size: 14px
+    margin: -15px 0 15px 0
+    text-align: center
 
         
             
