@@ -11,20 +11,20 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    <section class="main">
+    <section class="main" id="mainpage">
         <div class="container">
             <nav>
                 <div class="container-navbar">
                     <div class="main-parts">
-                        <a href="#" class="main-parts__item">Главная</a>
-                        <a href="#" class="main-parts__item">Каталог</a>
-                        <a href="#" class="main-parts__item">Доставка и оплата</a>
-                        <a href="#" class="main-parts__item">Фотогалерея</a>
-                        <a href="#" class="main-parts__item">О нас</a>
-                        <a href="#" class="main-parts__item">Контакты</a>
+                        <a href="#mainpage" class="main-parts__item">Главная</a>
+                        <a href="#catalog" class="main-parts__item">Каталог</a>
+                        <a href="#delivery-payment" class="main-parts__item">Доставка и оплата</a>
+                        <a href="#photogallery" class="main-parts__item">Фотогалерея</a>
+                        <a href="#about" class="main-parts__item">О нас</a>
+                        <a href="#contacts" class="main-parts__item">Контакты</a>
                     </div>
                     <div class="main-search">
-                        <textarea name="nameTextarea" id="" cols="11" rows="1" class="main-search__textarea" placeholder="Поиск"></textarea>
+                        <textarea name="nameTextarea" id="" cols="11" rows="1" class="main-search__textarea" placeholder="Поиск" onfocus="if (this.placeholder == 'Поиск') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = 'Поиск';}"></textarea>
                         <a href=""><img src="icons/search_main.svg" alt="search" class="main-search__item"></a>
                         <a href=""><img src="icons/bag_main.svg" alt="bag" class="main-search__item"></a>
                         <a href=""><img src="icons/user_main.svg" alt="user" class="main-search__item"></a>
@@ -43,7 +43,7 @@
 <!--         ...-->   
     </section>
 
-    <section class="tabs">
+    <section class="tabs" id="delivery-payment">
         <div class="container">
             <ul class="tabs__list">
                 <li class="tabs__item"><button class="tabs__btn tabs__btn_active" data-tabs-path="delivery">Доставка</button></li>
@@ -159,7 +159,7 @@
         </div>
     </section>  
 
-    <div class="gallery">
+    <div class="gallery" id="photogallery">
         <div class="container">
             <div class="title">Фотогалерея</div>
             <div class="gallery__wrapper">
@@ -191,7 +191,7 @@
         </div>
     </div>
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="title">О нас</div>
             <div class="about__wrapper">
@@ -208,7 +208,7 @@
         </div>
     </section>
 
-    <section class="form">
+    <section class="form" id="contacts">
         <div class="container-form">
             <div class="form__contacts">
                 <div class="form__contacts-wrapper">
@@ -239,27 +239,27 @@
                     </div>
                 </div>
             </div>
-            <form action="" name="main" class="form-main">
+            <form action="#" name="main" class="form-main">
                 <div class="form__title form__title__black">Оставьте заявку на обратный звонок:</div>
                 <div class="form-column">
                     <div class="form-main__item">
                         <label for="input_1" class="form__subtitle form__subtitle__grey">Имя:</label>
-                        <input tabindex="1" value="" id="input_1" type="text" name="name" class="form-main__input" placeholder="Введите Ваше имя" autocomplete="off">
+                        <input tabindex="1" value="" id="input_1" type="text" name="mainName" class="form-main__input" placeholder="Введите Ваше имя" autocomplete="off" onfocus="if (this.placeholder == 'Введите Ваше имя') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = 'Введите Ваше имя';}">
                     </div>
                     <div class="form-main__item">
                         <label for="input_2" class="form__subtitle form__subtitle__grey">Номер телефона:</label>
-                        <input tabindex="2" value="" id="input_2" type="tel" name="telephone" class="form-main__input" placeholder="+7 (903) - 28|" autocomplete="off">
+                        <input tabindex="2" value="" id="input_2" type="tel" name="mainTelephone" class="form-main__input" placeholder="+7 (903) - 28|" autocomplete="off" onfocus="if (this.placeholder == '+7 (903) - 28|') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = '+7 (903) - 28|';}">
                     </div>
                     <div class="form-main__item">
                         <label for="input_3" class="form__subtitle form__subtitle__grey">E-mail:</label>
-                        <input tabindex="3" value="" id="input_3" type="email" name="email" class="form-main__input" placeholder="example@mail.ru" autocomplete="off">
+                        <input tabindex="3" value="" id="input_3" type="email" name="mainEmail" class="form-main__input" placeholder="example@mail.ru" autocomplete="off" onfocus="if (this.placeholder == 'example@mail.ru') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = 'example@mail.ru';}">
                     </div>
                 </div>
 
                 <div class="form-column form-column__second">
                     <label for="input_4" class="form__subtitle form__subtitle__grey">Сообщение:</label>
-                    <textarea tabindex="4" id="input_4" type="text" name="textarea" class="form-main__textarea" placeholder="Введите Ваше сообщение" autocomplete="off"></textarea>
-                    <button class="button button__form">Оставить заявку</button>
+                    <textarea tabindex="4" id="input_4" type="text" name="mainTextarea" class="form-main__textarea" placeholder="Введите Ваше сообщение" autocomplete="off" onfocus="if (this.placeholder == 'Введите Ваше сообщение') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = 'Введите Ваше сообщение';}"></textarea>
+                    <button type="submit" class="button button__form">Оставить заявку</button>
                 </div>
                 
             </form>
@@ -292,12 +292,12 @@
             <div class="footer__block">
                 <div class="footer__nav-title">Меню навигации:</div>
                 <ul class="footer__ul">
-                    <li class="footer__links"><a href="" class="footer__link">Главная</a></li>
-                    <li class="footer__links"><a href="" class="footer__link">Каталог</a></li>
-                    <li class="footer__links"><a href="" class="footer__link">Доставка и оплата</a></li>
-                    <li class="footer__links"><a href="" class="footer__link">Фотогалерея</a></li>
-                    <li class="footer__links"><a href="" class="footer__link">О нас</a></li>
-                    <li class="footer__links"><a href="" class="footer__link">Контакты</a></li>
+                    <li class="footer__links"><a href="#mainpage" class="footer__link">Главная</a></li>
+                    <li class="footer__links"><a href="#catalog" class="footer__link">Каталог</a></li>
+                    <li class="footer__links"><a href="#delivery-payment" class="footer__link">Доставка и оплата</a></li>
+                    <li class="footer__links"><a href="#photogallery" class="footer__link">Фотогалерея</a></li>
+                    <li class="footer__links"><a href="#about" class="footer__link">О нас</a></li>
+                    <li class="footer__links"><a href="#contacts" class="footer__link">Контакты</a></li>
                 </ul>
             </div>
 
@@ -314,9 +314,9 @@
             </div>
             <div class="footer__block">
                 <div class="footer__nav-title mb20px">Подписаться на новости</div>
-                <input type="text" class="footer__input" placeholder="Имя">
-                <input type="text" class="footer__input" placeholder="E-mail">
-                <button class="button__footer">Подписаться</button>
+                <input type="text" class="footer__input" placeholder="Имя" onfocus="if (this.placeholder == 'Имя') {this.placeholder = '';}" onblur="if (this.placeholder == '') {this.placeholder = 'Имя';}">
+                <input type="text" class="footer__input" placeholder="E-mail" onfocus="if (this.placeholder == 'E-mail') {this.placeholder = ''; this.style.color = '#FFFFFF'}" onblur="if (this.placeholder == '') {this.placeholder = 'E-mail';}">
+                <button type="submit" class="button__footer">Подписаться</button>
             </div>
         </div>
         <div class="footer__line"></div>
@@ -325,6 +325,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
