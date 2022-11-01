@@ -33,36 +33,43 @@ $( document ).ready(function() {
 	});
 
 	//валидация формы с плагином
-	$('#mainform').validate({
-		rules: {
-			mainName: {
-				required: true,
-				minlength: 2
+	const validateForm = (form) => {
+		$(form).validate({
+			rules: {
+				mainName: {
+					required: true,
+					minlength: 2
+				},
+				mainTelephone: {
+					required: true,
+					number: true
+				},
+				mainEmail: {
+					required: true,
+					email: true
+				}
 			},
-			mainTelephone: {
-				required: true,
-				number: true
-			},
-			mainEmail: {
-				required: true,
-				email: true
+			messages: {
+				mainName: {
+					required: "Введите свое имя",
+					minlength: jQuery.validator.format("Введите минимум {0} символа!")
+				},
+				mainTelephone: {
+					required: "Введите свой номер телефона",
+					number: "Формат ввода +7(999)-99-99"
+				},
+				mainEmail: {
+					required: "Введите свою почту",
+					email: "Формат ввода example@domain.ru"
+				}
 			}
-		},
-		messages: {
-			mainName: {
-				required: "Введите свое имя",
-				minlength: jQuery.validator.format("Введите минимум {0} символа!")
-			},
-			mainTelephone: {
-				required: "Введите свой номер телефона",
-				number: "Формат ввода +7(999)-99-99"
-			},
-			mainEmail: {
-				required: "Введите свою почту",
-				email: "Формат ввода example@domain.ru"
-			}
-		}
 		});
+	};
+
+	validateForm('#mainform');
+	
+
+		
 });
 
 //валидация для формы футера
@@ -95,6 +102,7 @@ const isEmpty = () => {
 	}
 }
 
+//событие отправки формы
 footerForm.addEventListener('submit', (event) => {
 	event.preventDefault(); //сброс настроек по умолчанию
 
@@ -110,6 +118,8 @@ $(window).scroll(function() {
 		$('.pageup').fadeOut();
 	}
 });
+
+
 
 
 
