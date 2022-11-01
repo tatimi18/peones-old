@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		};
 	});
 
-		//плавный скролл
+//плавный скролл
 $( document ).ready(function() {
 		$('a[href^="#"').on('click', function() {
 
@@ -32,8 +32,77 @@ $( document ).ready(function() {
 			return false;
 	});
 
+	//валидация формы с плагином
+	$('#mainform').validate({
+		rules: {
+			mainName: {
+				required: true,
+				minlength: 2
+			},
+			mainTelephone: {
+				required: true,
+				number: true
+			},
+			mainEmail: {
+				required: true,
+				email: true
+			}
+		},
+		messages: {
+			mainName: {
+				required: "Введите свое имя",
+				minlength: jQuery.validator.format("Введите минимум {0} символа!")
+			},
+			mainTelephone: {
+				required: "Введите свой номер телефона",
+				number: "Формат ввода +7(999)-99-99"
+			},
+			mainEmail: {
+				required: "Введите свою почту",
+				email: "Формат ввода example@domain.ru"
+			}
+		}
+		});
 });
 
+//валидация для формы футера
+const footerForm = document.getElementById('footer-form'); //поиск формы
+const name = footerForm.querySelector('.footer-name'); //имя
+const email = footerForm.querySelector('.footer-email'); //email
+
+//очиста валидации при повторном нажатии отправки формы
+const removeValidation = () => {
+	const errors = footerForm.querySelectorAll('.footer-form__error');
+	for (let i = 0; i < errors.length; i++) {
+		errors[i].remove();
+	};
+};
+
+//проверка пустых полей
+const isEmpty = () => {
+	if (!name.value) {
+		const error = document.createElement('div');
+		error.className = 'footer-form__error';
+		error.innerHTML = `Введите свое имя`;
+		name.after(error);
+	};
+
+	if (!email.value) {
+		const error = document.createElement('div');
+		error.className = 'footer-form__error';
+		error.innerHTML = `Введите свою почту`;
+		email.after(error);
+	}
+}
+
+footerForm.addEventListener('submit', (event) => {
+	event.preventDefault(); //сброс настроек по умолчанию
+
+	removeValidation();
+	isEmpty();
+});
+
+//стрелка вверх
 $(window).scroll(function() {
 	if ($(this).scrollTop() > 1600) {
 		$('.pageup').fadeIn();
@@ -41,6 +110,10 @@ $(window).scroll(function() {
 		$('.pageup').fadeOut();
 	}
 });
+
+
+
+
 
 
 
